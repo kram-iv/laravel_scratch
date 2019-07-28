@@ -11,26 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    $tasks = [
-        'Go to the store',
-        'Go to the market',
-        'Go to work',
-        'Go to the concert',
-    ];
-    $title = 'Vikram\'s';
-
-    //return view('welcome')->withTasks($tasks)->withTitle($title);
-    return view('welcome')->with(['tasks' => $tasks,
-                                  'title' => $title]);
-    /*
-    return view('welcome',[
-        'tasks' => $tasks,
-        'title' => $title,
-    ]);
-    */
-});
-
+Route::get('/', 'PagesController@home');
+Route::get('/contact', 'PagesController@contact');
+Route::get('/about', 'PagesController@about');
+/*
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -38,3 +22,4 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('about');
 });
+*/
